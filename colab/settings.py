@@ -2,6 +2,8 @@
 
 import os.path
 
+gettext = lambda s: s
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -26,11 +28,19 @@ LOGIN_URL = '/login/'
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Sao_Paulo'
+#TIME_ZONE = 'America/Sao_Paulo'
+TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'pt-br'
+#LANGUAGE_CODE = 'pt-br'
+LANGUAGE_CODE = 'en-us'
+LANGUAGES = (
+    ('en', gettext('English')),
+    ('es', gettext('Spanish')),
+    ('pt-BR', gettext('Portuguese')),
+
+)
 
 SITE_ID = 1
 
@@ -82,6 +92,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -149,11 +160,14 @@ SERVER_EMAIL = '"Colab Interlegis" <noreply@interlegis.leg.br>'
 EMAIL_HOST_USER = SERVER_EMAIL
 
 #SOLR_HOSTNAME = 'solr.interlegis.leg.br'
-SOLR_HOSTNAME = '10.1.2.154'
-SOLR_PORT = '8080'
+#SOLR_HOSTNAME = '10.1.2.154'
+#SOLR_PORT = '8080'
+SOLR_HOSTNAME = 'localhost'
+SOLR_PORT = '8983'
 SOLR_SELECT_PATH = '/solr/select'
 
-SOLR_COLAB_URI = 'http://colab.interlegis.leg.br'
+#SOLR_COLAB_URI = 'http://colab.interlegis.leg.br'
+SOLR_COLAB_URI = 'http://localhost'
 SOLR_BASE_QUERY = """
     ((Type:changeset OR Type:ticket OR Type:wiki OR Type:thread) AND Title:["" TO *]) 
 """
