@@ -1,0 +1,26 @@
+*~
+*.pyc
+*.pyo
+*.tmp*
+*.mo
+*.egg
+*.EGG
+*.egg-info
+*.EGG-INFO
+*.kpf
+*.swp
+*.wpr
+.hg/
+.bzr/
+.svn/
+.project
+.pydevproject
+
+# OSX
+.DS_Store
+
+# django
+*.log
+*.pot
+*.pyc
+local_settings.py
