@@ -10,17 +10,26 @@
 *.kpf
 *.swp
 *.wpr
+.*.cfg
+.installed.cfg
+.mr.developer.cfg
 .hg/
 .bzr/
 .svn/
 .project
 .pydevproject
+bin/
+build/
+develop-eggs/
+downloads/
+eggs/
+fake-eggs/
+parts/
+dist/
+var/
+*.db
+colab/settings_local.py
+*setting_local.py
 
 # OSX
 .DS_Store
-
-# django
-*.log
-*.pot
-*.pyc
-local_settings.py
