@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from django.views.generic.simple import direct_to_template
+from django.views.generic import TemplateView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -14,8 +14,7 @@ urlpatterns = patterns('',
     
     url(r'^rss/', include('colab.rss.urls')),
 
-    url(r'open-data/$', direct_to_template, {'template': 'open-data.html'}, 
-        name='opendata'),
+    url(r'open-data/$', TemplateView.as_view(template_name="open-data.html"), name="opendata"),
 
     url(r'^user/(?P<username>[\w@+.-]+)/?$',
         'colab.views.userprofile.by_username', name='user_profile'),
