@@ -43,6 +43,8 @@ LANGUAGES = (
 
 )
 
+LOCALE_PATHS = (PROJECT_PATH + "/locale",)
+
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
@@ -141,9 +143,9 @@ AUTHENTICATION_BACKENDS = (
     'django_auth_ldap.backend.LDAPBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
-AUTH_LDAP_SERVER_URI = "ldap://direccion_servicio_ldap"
-AUTH_LDAP_BASE = "o=canaima"
-AUTH_LDAP_BIND_DN = "cn=admin, ou=plataforma,"+AUTH_LDAP_BASE
+AUTH_LDAP_SERVER_URI = "ldap://LDAP_SERVER_URL"
+AUTH_LDAP_BASE = "o=organizacion"
+AUTH_LDAP_BIND_DN = "cn=admin, ou=departamento,"+AUTH_LDAP_BASE
 AUTH_LDAP_BIND_PASSWORD = "contrasena"
 AUTH_LDAP_USER__DN_TEMPLATE = 'uid=%(user)s,'+AUTH_LDAP_BASE
 
@@ -165,6 +167,7 @@ AUTH_LDAP_FIND_GROUP_PERMS = False
 AUTH_LDAP_CACHE_GROUPS = True
 
 AUTH_LDAP_GROUP_CACHE_TIMEOUT = 3600
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.
@@ -178,6 +181,7 @@ LOGGING = {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler',
             'include_html': True,
+            'filters': [],
         }
     },
     'loggers': {
