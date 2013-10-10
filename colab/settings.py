@@ -13,6 +13,7 @@ if DEBUG:
 
 
 ADMINS = (
+   ( 'admin', 'eliezerfot123@gmail.com'),
 )
 
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
@@ -29,12 +30,12 @@ LOGIN_URL = '/login/'
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
 #TIME_ZONE = 'America/Sao_Paulo'
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/Caracas'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 #LANGUAGE_CODE = 'pt-br'
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-ve'
 LANGUAGES = (
     ('en', gettext('English')),
     ('es', gettext('Spanish')),
@@ -130,8 +131,40 @@ INSTALLED_APPS = (
     'colab.super_archives',
     'colab.api',
     'colab.rss',
+    'django_auth_ldap',
 )
 
+import ldap
+from django_auth_ldap.config import LDAPSearch, GroupOfNamesType
+
+AUTHENTICATION_BACKENDS = (
+    'django_auth_ldap.backend.LDAPBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+AUTH_LDAP_SERVER_URI = "ldap://direccion_servicio_ldap"
+AUTH_LDAP_BASE = "o=canaima"
+AUTH_LDAP_BIND_DN = "cn=admin, ou=plataforma,"+AUTH_LDAP_BASE
+AUTH_LDAP_BIND_PASSWORD = "contrasena"
+AUTH_LDAP_USER__DN_TEMPLATE = 'uid=%(user)s,'+AUTH_LDAP_BASE
+
+
+AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=plataforma,"+AUTH_LDAP_BASE, ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
+
+# Set up the basic group parameters.
+AUTH_LDAP_USER_ATTR_MAP = {
+    "first_name":"givenName",
+    "last_name":"sn",
+    "password":"userPassword",
+    "email":"mail"
+}
+
+AUTH_LDAP_ALWAYS_UPDATE_USER = True
+
+AUTH_LDAP_FIND_GROUP_PERMS = False
+
+AUTH_LDAP_CACHE_GROUPS = True
+
+AUTH_LDAP_GROUP_CACHE_TIMEOUT = 3600
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.

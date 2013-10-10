@@ -35,7 +35,8 @@ urlpatterns = patterns('',
 
     url(r'^account/changepassword/$', 'colab.views.signup.change_password',
         name='change_password'),
-
+    (r'^account/changepassword/$', 'django_ldapbackend.views.password_change'),
+    (r'^account/changepassword/$', 'django.contrib.auth.views.password_change_done'),
     url(r'^account/resetpassword/$', 
         'colab.views.signup.request_reset_password', 
         name='request_reset_password'),
