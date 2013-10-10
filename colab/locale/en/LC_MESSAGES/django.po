@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-05 11:23-0430\n"
+"POT-Creation-Date: 2013-10-08 15:01-0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,111 +81,71 @@ msgstr ""
 msgid "Google Talk"
 msgstr ""
 
-#: super_archives/forms.py:29 super_archives/models.py:71
+#: super_archives/forms.py:29
 msgid "Personal Website/Blog"
 msgstr ""
 
-#: super_archives/models.py:57
-msgid "Institution name"
-msgstr ""
-
-#: super_archives/models.py:57
-msgid "Please enter your Institution name"
-msgstr ""
-
-#: super_archives/models.py:59
-msgid "Role"
-msgstr ""
-
-#: super_archives/models.py:60
-msgid "Please enter your role name into your organization or institution"
-msgstr ""
-
-#: super_archives/models.py:65
-msgid "Facebook account"
-msgstr ""
-
 #: super_archives/models.py:66
-msgid ""
-"Please enter the URL as the following format: <em>http://www.facebook.com/"
-"facebook</em>."
-msgstr ""
-
-#: super_archives/models.py:68
-msgid "Google talk account"
-msgstr ""
-
-#: super_archives/models.py:69
-msgid ""
-"Please enter the email as the following format: <em>user@gmail.com</em>."
-msgstr ""
-
-#: super_archives/models.py:72
-msgid ""
-"Please enter the URL as the following format: <em>http://mywebstie.com</em>."
-msgstr ""
-
-#: super_archives/models.py:76
 msgid "User Profile"
 msgstr ""
 
-#: super_archives/models.py:77
+#: super_archives/models.py:67
 msgid "Users Profiles"
 msgstr ""
 
-#: super_archives/models.py:109
-msgid "Thread"
-msgstr ""
-
-#: super_archives/models.py:110
-msgid "Threads"
-msgstr ""
-
-#: super_archives/models.py:115
+#: super_archives/models.py:100
 msgid "Mailing List"
 msgstr ""
 
-#: super_archives/models.py:116
+#: super_archives/models.py:101
 msgid "The Mailing List where is the thread"
 msgstr ""
 
-#: super_archives/models.py:119
+#: super_archives/models.py:104
 msgid "Latest message"
 msgstr ""
 
-#: super_archives/models.py:120
+#: super_archives/models.py:105
 msgid "Latest message posted"
 msgstr ""
 
-#: super_archives/models.py:121
+#: super_archives/models.py:106
 msgid "Score"
 msgstr ""
 
-#: super_archives/models.py:121
+#: super_archives/models.py:106
 msgid "Thread score"
 msgstr ""
 
-#: super_archives/models.py:207
+#: super_archives/models.py:113
+msgid "Thread"
+msgstr ""
+
+#: super_archives/models.py:114
+msgid "Threads"
+msgstr ""
+
+#: super_archives/models.py:196
 msgid "Subject"
 msgstr ""
 
-#: super_archives/models.py:208
+#: super_archives/models.py:197
 msgid "Please enter a message subject"
 msgstr ""
 
-#: super_archives/models.py:211
+#: super_archives/models.py:200
 msgid "Message body"
 msgstr ""
 
-#: super_archives/models.py:212
+#: super_archives/models.py:201
 msgid "Please enter a message body"
 msgstr ""
 
-#: super_archives/models.py:221
+#: super_archives/models.py:210
 msgid "Message"
 msgstr ""
 
-#: super_archives/models.py:222
+#: super_archives/models.py:211
 msgid "Messages"
 msgstr ""
 
@@ -316,7 +276,7 @@ msgstr ""
 msgid "Change password"
 msgstr ""
 
-#: templates/account_request_reset_password.html:5 templates/login.html:30
+#: templates/account_request_reset_password.html:5 templates/login.html:28
 msgid "I forgot my password"
 msgstr ""
 
@@ -328,11 +288,11 @@ msgstr ""
 msgid "Send new password"
 msgstr ""
 
-#: templates/base.html:71 templates/login.html:43 templates/signup-form.html:6
+#: templates/base.html:71 templates/login.html:42 templates/signup-form.html:6
 msgid "Sign up"
 msgstr ""
 
-#: templates/base.html:74 templates/login.html:17
+#: templates/base.html:74 templates/login.html:15
 msgid "Login"
 msgstr ""
 
@@ -450,8 +410,12 @@ msgstr ""
 msgid "View more discussions..."
 msgstr ""
 
-#: templates/login.html:36
+#: templates/login.html:34
 msgid "Not already registered? Sign up!"
+msgstr ""
+
+#: templates/login.html:36
+msgid "I forgot my password  To access some features of Colab"
 msgstr ""
 
 #: templates/open-data.html:6

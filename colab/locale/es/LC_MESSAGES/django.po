@@ -1,21 +1,21 @@
 # colab translation.
 # Copyright (C) 2012 colab
 # This file is distributed under the same license as the colab package.
-# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2012.
-#
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: colab\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-05 11:23-0430\n"
-"PO-Revision-Date: 2012-05-04 23:28-0400\n"
+"POT-Creation-Date: 2013-10-08 15:13-0430\n"
+"PO-Revision-Date: 2013-12-04 20:19-0430\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
-"Language-Team: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
-"Language: Spanish\n"
+"Language-Team: ES <LL@li.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 
 #: settings.py:39
 msgid "English"
@@ -75,117 +75,77 @@ msgstr "Cuenta Twitter"
 
 #: super_archives/forms.py:27
 msgid "Facebook"
-msgstr "Cuenta Google Talk"
+msgstr "Cuenta Facebook"
 
 #: super_archives/forms.py:28
 msgid "Google Talk"
 msgstr "Cuenta Google Talk"
 
-#: super_archives/forms.py:29 super_archives/models.py:71
+#: super_archives/forms.py:29
 msgid "Personal Website/Blog"
 msgstr "Sitio Web / Blog personal"
 
-#: super_archives/models.py:57
-msgid "Institution name"
-msgstr "Institución"
-
-#: super_archives/models.py:57
-msgid "Please enter your Institution name"
-msgstr ""
-
-#: super_archives/models.py:59
-msgid "Role"
-msgstr "Función"
-
-#: super_archives/models.py:60
-msgid "Please enter your role name into your organization or institution"
-msgstr ""
-
-#: super_archives/models.py:65
-msgid "Facebook account"
-msgstr "Cuenta Facebook"
-
 #: super_archives/models.py:66
-msgid ""
-"Please enter the URL as the following format: <em>http://www.facebook.com/"
-"facebook</em>."
-msgstr ""
-
-#: super_archives/models.py:68
-msgid "Google talk account"
-msgstr "Cuenta Google Talk"
-
-#: super_archives/models.py:69
-msgid ""
-"Please enter the email as the following format: <em>user@gmail.com</em>."
-msgstr ""
-
-#: super_archives/models.py:72
-msgid ""
-"Please enter the URL as the following format: <em>http://mywebstie.com</em>."
-msgstr ""
-
-#: super_archives/models.py:76
 msgid "User Profile"
 msgstr "Perfil de usuario"
 
-#: super_archives/models.py:77
+#: super_archives/models.py:67
 msgid "Users Profiles"
 msgstr "Perfiles de usuarios"
 
-#: super_archives/models.py:109
-msgid "Thread"
-msgstr "Hilo"
-
-#: super_archives/models.py:110
-msgid "Threads"
-msgstr "Hilos"
-
-#: super_archives/models.py:115
+#: super_archives/models.py:100
 msgid "Mailing List"
 msgstr "Lista de correo electrónico"
 
-#: super_archives/models.py:116
+#: super_archives/models.py:101
 msgid "The Mailing List where is the thread"
 msgstr "La lista de correo electrónico donde esta el hilo de discusión"
 
-#: super_archives/models.py:119
+#: super_archives/models.py:104
 msgid "Latest message"
 msgstr "Últimos mensaje"
 
-#: super_archives/models.py:120
+#: super_archives/models.py:105
 msgid "Latest message posted"
 msgstr "Últimos mensajes enviados"
 
-#: super_archives/models.py:121
+#: super_archives/models.py:106
 msgid "Score"
 msgstr "Puntuación"
 
-#: super_archives/models.py:121
+#: super_archives/models.py:106
 msgid "Thread score"
 msgstr "Puntuación de mensaje"
 
-#: super_archives/models.py:207
+#: super_archives/models.py:113
+msgid "Thread"
+msgstr "Hilo"
+
+#: super_archives/models.py:114
+msgid "Threads"
+msgstr "Hilos"
+
+#: super_archives/models.py:196
 msgid "Subject"
 msgstr "Asunto"
 
-#: super_archives/models.py:208
+#: super_archives/models.py:197
 msgid "Please enter a message subject"
-msgstr ""
+msgstr "Por favor, introduzca un asunto al mensaje"
 
-#: super_archives/models.py:211
+#: super_archives/models.py:200
 msgid "Message body"
 msgstr "Cuerpo de mensaje"
 
-#: super_archives/models.py:212
+#: super_archives/models.py:201
 msgid "Please enter a message body"
-msgstr ""
+msgstr "Por favor, introduzca un cuerpo del mensaje"
 
-#: super_archives/models.py:221
+#: super_archives/models.py:210
 msgid "Message"
 msgstr "Mensaje"
 
-#: super_archives/models.py:222
+#: super_archives/models.py:211
 msgid "Messages"
 msgstr "Mensajes"
 
@@ -302,7 +262,7 @@ msgstr "votado"
 
 #: templates/404.html:3
 msgid "Not found. Keep searching! :)"
-msgstr "¡No se ha encontrado. Sigue buscando!"
+msgstr "¡No se ha encontrado. Sigue buscando! :)"
 
 #: templates/500.html:3
 msgid "Ooopz... something went wrong!"
@@ -316,7 +276,7 @@ msgstr "Por favor, corrija los siguientes errores y trate de nuevo."
 msgid "Change password"
 msgstr "Cambiar contraseña"
 
-#: templates/account_request_reset_password.html:5 templates/login.html:30
+#: templates/account_request_reset_password.html:5 templates/login.html:28
 msgid "I forgot my password"
 msgstr "Yo olvide mi contraseña"
 
@@ -328,11 +288,11 @@ msgstr "Usuario"
 msgid "Send new password"
 msgstr "Enviar nueva contraseña"
 
-#: templates/base.html:71 templates/login.html:43 templates/signup-form.html:6
+#: templates/base.html:71 templates/login.html:40 templates/signup-form.html:6
 msgid "Sign up"
 msgstr "Registrarse"
 
-#: templates/base.html:74 templates/login.html:17
+#: templates/base.html:74 templates/login.html:15
 msgid "Login"
 msgstr "Iniciar sesión"
 
@@ -397,12 +357,19 @@ msgid ""
 "  to the user's <b>%(username)s</b> of Interlegis Colab. If you have not \n"
 "  made ​​the request, please ignore this message.\n"
 msgstr ""
+"\n"
+"  Este correo electrónico fue enviado para confirmar la solicitud de cambio "
+"de contraseña\n"
+"  a del usuario <b>%(username)s</b> de Interlegis Colab. Si usted no ha\n"
+"  hecho la petición, por favor, ignora este mensaje.\n"
 
 #: templates/email_account-reset-password.html:12
 msgid ""
 "\n"
 "  To perform the password change visit the link below:\n"
 msgstr ""
+"\n"
+"  Para realizar el cambio de contraseña visitar el siguiente enlace:\n"
 
 #: templates/email_signup-email-confirmation.html:3
 msgid "Welcome to the Colab!"
@@ -413,6 +380,8 @@ msgid ""
 "To activate your account, please confirm your mail's activation by accessing "
 "the following link:"
 msgstr ""
+"Para activar su cuenta, por favor confirme la activación de su correo "
+"electrónico accediendo al siguiente enlace:"
 
 #: templates/home.html:15
 msgid "INTERLEGIS COMMUNITIES"
@@ -450,9 +419,19 @@ msgstr "RSS - Últimas discusiones"
 msgid "View more discussions..."
 msgstr "Ver más discusiones..."
 
-#: templates/login.html:36
+#: templates/login.html:34
 msgid "Not already registered? Sign up!"
 msgstr "¿No esta registrado? ¡Regístrese!"
+
+#: templates/login.html:36
+msgid ""
+"To access some features of Colab you must be registered. If you are not "
+"already registered systems in the community Interlegis click on the link "
+"below and get to work!"
+msgstr ""
+"Para acceder a algunas de las características de Colab debes estar "
+"registrado. Si aún no está registrado en el sistema comunitario Interlegis "
+"haz clic en el enlace de abajo y ponte a trabajar!"
 
 #: templates/open-data.html:6
 msgid "OpenData - Communities Interlegis"
@@ -463,6 +442,8 @@ msgid ""
 "At this point the system Colab provides much of its data \n"
 "        through its search engine."
 msgstr ""
+"En este punto el sistema de Colab proporciona gran parte de sus datos \n"
+"        a través de su motor de búsqueda."
 
 #: templates/open-data.html:9
 msgid ""
@@ -472,14 +453,19 @@ msgid ""
 "via the ticketing \n"
 "        system (you must be registered in order to create a ticket)."
 msgstr ""
+"Si usted está interesado en la integración de su sistema con el entorno "
+"Colab \n"
+"        y no requiere de otros datos proporcionados por esta API, por favor "
+"póngase en contacto con nosotros a través de nuestro sistema de ticket \n"
+"        (debe estar registrado con el fin de crear un ticket)."
 
 #: templates/open-data.html:13
 msgid "Performing searches via the API"
-msgstr ""
+msgstr "Realización de búsquedas a través de la API"
 
 #: templates/open-data.html:16
 msgid "The base URL used for the search is:"
-msgstr ""
+msgstr "La dirección URL base que se utiliza para la búsqueda es:"
 
 #: templates/open-data.html:19
 msgid "Parameters:"
@@ -487,7 +473,7 @@ msgstr "Parámetros:"
 
 #: templates/open-data.html:22
 msgid "Query"
-msgstr ""
+msgstr "Consulta"
 
 #: templates/open-data.html:23
 msgid ""
@@ -499,24 +485,35 @@ msgid ""
 "stored \n"
 "                by the system, for example <b>jeanferri</b>."
 msgstr ""
+"La <i>consulta</i> es la \"pregunta\" enviado \n"
+"                al servidor de búsqueda. Una <i>consulta</i> consiste de \n"
+"                <b>campo:valor</b>, en el que el campo representa un tipo de "
+"datos del sistema,\n"
+"                por ejemplo <b>collaborator</b> y representa los datos "
+"almacenados\n"
+"                por el sistema, por ejemplo <b>jeanferri</b>."
 
 #: templates/open-data.html:28
 msgid "The following is a list of available fields to search:"
-msgstr ""
+msgstr "La siguiente es una lista de los campos disponibles para la búsqueda:"
 
 #: templates/open-data.html:30
 msgid "wiki, thread, ticket, changeset."
-msgstr ""
+msgstr "wiki, hilo de discusión, ticket, revisión de cambios."
 
 #: templates/open-data.html:31
 msgid "page name, title of the discussion or ticket, changeset description."
 msgstr ""
+"nombre de la página, el título de la discusión o del ticket, descripción de "
+"la revisión de cambios."
 
 #: templates/open-data.html:32
 msgid ""
 "excerpt from the page or the discussion, description of the ticket or "
 "changeset."
 msgstr ""
+"extracto de la página o la discusión, descripción del ticket o de la "
+"revisión de cambios."
 
 #: templates/open-data.html:33
 msgid "name of user who created the document."
@@ -528,11 +525,11 @@ msgstr "nombre real de quien creo el documento."
 
 #: templates/open-data.html:35
 msgid "creation date."
-msgstr "fecha de creación"
+msgstr "fecha de creación."
 
 #: templates/open-data.html:36
 msgid "modification date."
-msgstr "fecha de modificación"
+msgstr "fecha de modificación."
 
 #: templates/open-data.html:37
 msgid "mailing list (only for type thread)."
@@ -540,16 +537,18 @@ msgstr "lista de correo electrónico (solamente para el tipo hilado)."
 
 #: templates/open-data.html:38
 msgid "name of the wiki page."
-msgstr "nombre de página wiki"
+msgstr "nombre de página wiki."
 
 #: templates/open-data.html:39
 msgid "comments of tickets (all concatenated)."
-msgstr ""
+msgstr "comentarios de los tickets (todos concatenados)."
 
 #: templates/open-data.html:40
 msgid ""
 "contents of wiki page or messages of the discussions (all concatenated)."
 msgstr ""
+"contenidos de la página wiki o mensajes de los discusiones (todos "
+"concatenados)."
 
 #: templates/open-data.html:41
 msgid "keywords (ticket only)."
@@ -589,7 +588,7 @@ msgstr "revisión (solamente para ticket)."
 
 #: templates/open-data.html:50
 msgid "synonym for the title (for discussion)."
-msgstr ""
+msgstr "sinónimo del título (para la discusión)."
 
 #: templates/open-data.html:56
 msgid "Results per page - n"
@@ -600,6 +599,8 @@ msgid ""
 "Number of results to be displayed per page. \n"
 "                Its value must be an integer between 1 and 500."
 msgstr ""
+"Número de resultados que se mostrarán por página. \n"
+"                Su valor debe ser un entero entre 1 y 500."
 
 #: templates/open-data.html:59
 msgid "Default: 50"
@@ -614,6 +615,8 @@ msgid ""
 "Page number that appears. Its value must be an \n"
 "                integer equal to or greater than 1."
 msgstr ""
+"El número de página que aparece. Su valor debe ser un \n"
+"                número entero igual o mayor que 1."
 
 #: templates/open-data.html:66
 msgid "Default: 1"
@@ -621,7 +624,7 @@ msgstr "Por defecto: 1"
 
 #: templates/open-data.html:71
 msgid "Order - o"
-msgstr ""
+msgstr "Ordenar - o"
 
 #: templates/open-data.html:72
 msgid ""
@@ -632,6 +635,12 @@ msgid ""
 "be \n"
 "                <b>asc</b> for ascending or <b>desc</b> for descending."
 msgstr ""
+"Orden en el que se mostrarán los resultados. Su valor debe ser \n"
+"                una cadena en el <b>campo dirección</b> en la que el mismo "
+"campo son \n"
+"                 presentado en el <i>consulta</i> el parámetro y la "
+"dirección puede ser \n"
+"                <b>asc</b> de subida o <b>desc</b> para el descenso."
 
 #: templates/pizza-chart.html:24
 msgid "Emails"
@@ -768,3 +777,37 @@ msgstr "Correo electrónico validado correctamente."
 #: views/signup.py:187 views/signup.py:218
 msgid "Password changed successfully!"
 msgstr "¡Contraseña cambiada correctamente!"
+
+#msgid "Institution"
+#msgstr "Institución"
+#msgid "Function"
+#msgstr "Función"
+#msgid "Facebook"
+#msgstr "Cuenta Facebook"
+#msgid "Google talk account"
+#msgstr "Cuenta Google Talk"
+#msgid "Institution name"
+#msgstr "Institución"
+#msgid "Please enter your Institution name"
+#msgstr ""
+#msgid "Role"
+#msgstr "Función"
+#msgid "Please enter your role name into your organization or institution"
+#msgstr ""
+#msgid "Facebook account"
+#msgstr "Cuenta Facebook"
+#msgid ""
+#"Please enter the URL as the following format: <em>http://www.facebook.com/"
+#"facebook</em>."
+#: super_archives/forms.py:23
+#: super_archives/forms.py:25
+#: super_archives/forms.py:27
+#: super_archives/models.py:68
+#: super_archives/models.py:57
+#: super_archives/models.py:57
+#: super_archives/models.py:59
+#: super_archives/models.py:60
+#: super_archives/models.py:65
+#: super_archives/models.py:66
+msgid ""
+msgstr ""
