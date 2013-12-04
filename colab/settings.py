@@ -29,13 +29,11 @@ LOGIN_URL = '/login/'
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-#TIME_ZONE = 'America/Sao_Paulo'
-TIME_ZONE = 'America/Caracas'
+TIME_ZONE = 'America/Sao_Paulo'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-#LANGUAGE_CODE = 'pt-br'
-LANGUAGE_CODE = 'es-ve'
+LANGUAGE_CODE = 'pt-BR'
 LANGUAGES = (
     ('en', gettext('English')),
     ('es', gettext('Spanish')),
@@ -136,38 +134,6 @@ INSTALLED_APPS = (
     'django_auth_ldap',
 )
 
-import ldap
-from django_auth_ldap.config import LDAPSearch, GroupOfNamesType
-
-AUTHENTICATION_BACKENDS = (
-    'django_auth_ldap.backend.LDAPBackend',
-    'django.contrib.auth.backends.ModelBackend',
-)
-AUTH_LDAP_SERVER_URI = "ldap://LDAP_SERVER_URL"
-AUTH_LDAP_BASE = "o=organizacion"
-AUTH_LDAP_BIND_DN = "cn=admin, ou=departamento,"+AUTH_LDAP_BASE
-AUTH_LDAP_BIND_PASSWORD = "contrasena"
-AUTH_LDAP_USER__DN_TEMPLATE = 'uid=%(user)s,'+AUTH_LDAP_BASE
-
-
-AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=plataforma,"+AUTH_LDAP_BASE, ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
-
-# Set up the basic group parameters.
-AUTH_LDAP_USER_ATTR_MAP = {
-    "first_name":"givenName",
-    "last_name":"sn",
-    "password":"userPassword",
-    "email":"mail"
-}
-
-AUTH_LDAP_ALWAYS_UPDATE_USER = True
-
-AUTH_LDAP_FIND_GROUP_PERMS = False
-
-AUTH_LDAP_CACHE_GROUPS = True
-
-AUTH_LDAP_GROUP_CACHE_TIMEOUT = 3600
-
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.
@@ -193,21 +159,45 @@ LOGGING = {
     }
 }
 
-SERVER_EMAIL = '"Colab Interlegis" <noreply@interlegis.leg.br>'
+################ Mail Server
+SERVER_EMAIL = None
 EMAIL_HOST_USER = SERVER_EMAIL
 
-#SOLR_HOSTNAME = 'solr.interlegis.leg.br'
-#SOLR_HOSTNAME = '10.1.2.154'
-#SOLR_PORT = '8080'
-SOLR_HOSTNAME = 'localhost'
-SOLR_PORT = '8983'
-SOLR_SELECT_PATH = '/solr/select'
+################ Solr
+SOLR_HOSTNAME = None
+SOLR_PORT = None
+SOLR_SELECT_PATH = None
 
-#SOLR_COLAB_URI = 'http://colab.interlegis.leg.br'
-SOLR_COLAB_URI = 'http://localhost'
+SOLR_COLAB_URI = None
 SOLR_BASE_QUERY = """
     ((Type:changeset OR Type:ticket OR Type:wiki OR Type:thread) AND Title:["" TO *]) 
 """
 
+################ Development Settings locals
 from settings_local import *
 
+################ LDAP
+if LDAP_ENABLED == True:
+    """
+    Enable LDAP configurations
+    """
+    import ldap
+    from django_auth_ldap.config import LDAPSearch, GroupOfNamesType
+
+    AUTHENTICATION_BACKENDS = (
+        'django_auth_ldap.backend.LDAPBackend',
+        'django.contrib.auth.backends.ModelBackend',
+    )
+    
+    # Set up the basic group parameters.
+    AUTH_LDAP_USER_ATTR_MAP = {
+        "first_name":"givenName",
+        "last_name":"sn",
+        "password":"userPassword",
+        "email":"mail"
+    }
+
+    AUTH_LDAP_ALWAYS_UPDATE_USER = True
+    AUTH_LDAP_FIND_GROUP_PERMS = False
+    AUTH_LDAP_CACHE_GROUPS = True
+    AUTH_LDAP_GROUP_CACHE_TIMEOUT = 3600
