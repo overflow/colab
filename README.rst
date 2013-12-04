@@ -8,118 +8,40 @@
 Colab, a Software for Communities
 =================================
 
+What is Colab?
+==============
+
+Application that integrates existing systems to represent the contributions of the members through:
+
+* The amendments to the Wiki trac system.
+
+* Changes to the trac system code.
+
+* Discussions at the mailman list.
+
+* And other systems in the community.
 
 Features
 ========
 
-* 
+* Developerd by Interlegis Communities http://colab.interlegis.leg.br/
 
-Installation
-============
+* Writed with Python http://python.org/
 
-Installation instructions for Ubuntu 10.04
--------------------------------------------
+* Build in Django Web Framework https://www.djangoproject.com/
 
-* Install Apache2 with WSGI support:
+* Search engine with Solr https://lucene.apache.org/solr/
 
-  * apt-get install apache2 libapache2-mod-wsgi
+Colab and Solr
+==============
 
-* Install dependencies to compile psycopg2:
+This software uses Apache Solr as search platform based on Apache Lucene.
 
-  * apt-get build-dep python-psycopg2
-
-* Install Python PIP and update it:
-  
-  * apt-get install python-pip
-  * pip install -U pip
-
-* Install python virtualenv:
-  
-  * pip install virtualenv 
-
-* Create a virtualenv for the deploy
- 
-  * mkdir /usr/local/django/
-  * virtualenv /usr/local/django/colab/
-
-* Download the colab src code:
-
-  * hg clone https://bitbucket.org/seocam/atu-colab /usr/local/src/colab/
-
-* Install the django site:
-
-  * pip install /usr/local/src/colab -E /usr/local/django/colab/
-
-* Configure your database settings in /usr/local/django/colab/lib/python2.6/site-packages/settings_local.py
-  
-* Enable the colab site on apache and reload it:
-
-  * ln -s /usr/local/django/colab/apache-site/colab /etc/apache2/sites-available
-  * a2ensite colab
-  * service apache2 restart
-  
-
-Configuring server to send emails
-----------------------------------
-
-* Install postfix and mailutils:
- 
-  * apt-get install mailutils postfix
-
-* Update the file /etc/aliases adding users that should receive root's messages and run the update command:
-
-  * newaliases
+With Solr generates the REST style API with which you can make HTTP requests 
+to get results: natively in XML or JSON, PHP, Ruby and Python and then treatment.
 
 
-Cron job to import emails
----------------------------
+Documentation
+=============
 
-* Install sshfs:
-  
-  * apt-get install sshfs autofs
-  
-* Create SSH keys. You should use a password but this tutorial won't cover it (if you use you will need to install and configure keychain process to be able to proceed):
-
-  * ssh-keygen
-  
-* Copy the content of your key (/root/.ssh/id_rsa.pub) to the file /root/.ssh/authorized_keys on the mailinglist server.
-
-* Append the following content to /etc/auto.master file:
-
-  * /usr/local/django/colab/mnt /usr/local/django/colab/autofs/listas --timeout=600,--ghost
-
-* Restart autofs:
-
-  * service autofs restart
-  
-* Link cron script into /etc/cron.d/ folder:
-
-  * ln -s /usr/local/django/colab/cron.d/colab_import_emails /etc/cron.d/ 
-  
-* From now on the emails should be imported every minute
-
-
-Cron job to reindex Solr
--------------------------
-
-* Install wget:
-  
-  * apt-get install wget
-  
-* Link cron script into /etc/cron.d/ folder:
-  
-  * ln -s /usr/local/django/colab/cron.d/colab_solr_reindex /etc/cron.d/
-  
-* From now on delta reindex should run every 10 minutes and full reindex once a day. 
-
-
-Updating an installed version
-------------------------------
-
-* Update the source code:
-  
-  * cd /usr/local/src/colab/
-  * hg pull
-  * hg up
-  * pip install /usr/local/src/colab/ -E /usr/local/django/colab/ -U
-  * service apache2 restart
+More information read the documentation at http://colab.rtfd.org/.
