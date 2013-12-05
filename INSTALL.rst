@@ -52,16 +52,7 @@ Para hacer esto lo realiza con los siguientes comandos:
 
     $ cd buildout.colab
 
-    $ buildout init
-
-Luego debe editar el archivo ``buildout.cfg`` generado con el comando anterior con el siguiente comando::
-    
-    $ vim buildout.cfg
-
-Debe quedar las configuraciones así::
-
-    [buildout]
-    extends = base.cfg
+    $ python bootstrap.py
 
 Ya hecho esto puede iniciar la construcción del proyecto, con el siguiente comando::
 
