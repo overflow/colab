@@ -2,10 +2,10 @@
 
 .. highlight:: rest
 
-.. _debianwheezy_install:
+.. _ubuntu1204_install:
 
-Installation instructions for Debian Wheezy
-===========================================
+Installation instructions for Ubuntu 12.04
+==========================================
 
 .. contents :: :local:
 
@@ -14,19 +14,18 @@ Install dependencies
 
 * Install Git and VirtualBox: ::
 
-    aptitude install git-core virtualbox
+    sudo apt-get install git-core virtualbox
     
 * Download Vagrant 3.3 and install it: ::
 
     wget http://files.vagrantup.com/packages/a40522f5fabccb9ddabad03d836e120ff5d14093/vagrant_1.3.5_i686.deb
-    dpkg -i vagrant_1.3.5_i686.deb
+    sudo dpkg -i vagrant_1.3.5_i686.deb
 
 * Install Fabric: ::
 
-    aptitude install build-essential python-dev python-pkg-resources python-setuptools
-    easy_install --upgrade pip
-    pip install --upgrade setuptools
-    pip install fabric
+    sudo apt-get install build-essential python-dev python-pkg-resources python-setuptools
+    sudo easy_install --upgrade pip
+    sudo pip install fabric
 
 Getting started with the Virtual Machine
 ------------------------------------------

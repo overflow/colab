@@ -13,4 +13,5 @@ Colab software can be install in many Linux distros, like these:
    :maxdepth: 1
 
    debianwheezy
+   ubuntu1204
    ubuntu1004
