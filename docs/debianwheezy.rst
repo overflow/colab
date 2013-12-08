@@ -2,10 +2,10 @@
 
 .. highlight:: rest
 
-.. _ubuntu1004_install:
+.. _debianwheezy_install:
 
-Installation instructions for Ubuntu 10.04
-==========================================
+Installation instructions for Debian Wheezy
+===========================================
 
 .. contents :: :local:
 
@@ -38,10 +38,10 @@ First you will need to clone the repository:
   git clone git@github.com:interlegis/colab.git
 
 
-*NOTE:*
+.. note::
 
-  Here we are assuming you have ssh permissions to clone the repo using ssh. If not
-  fork it and clone your own fork (or use https instead of ssh).
+    Here we are assuming you have ssh permissions to clone the repo using ssh. If not
+    fork it and clone your own fork (or use https instead of ssh).
 
 
 Enter in the repository you've just cloned.
@@ -52,13 +52,13 @@ To start working all you need is to turn the virtual machine on with the command
   vagrant up
 
 
-*NOTE:*
+.. note::
 
-  BE PATIENT!
- 
-  This will take a while. The `vagrant up` will download a full vm (virtualbox)
-  running a Ubuntu 12.04 64bits. After the vm is up and running the command
-  will also configure it (using puppet) and that will also take a bit.
+    BE PATIENT!
+    
+    This will take a while. The :command:`vagrant up` will download a full vm (virtualbox)
+    running a Ubuntu 12.04 64bits. After the vm is up and running the command
+    will also configure it (using puppet) and that will also take a bit.
   
 
 Running Colab
@@ -79,8 +79,8 @@ The code used to run Colab will be the same code placed on your machine,
 that means that if you change the code in your own computer the code on
 the vm will also change.
 
-Make sure you have a ``local_settings.py`` file placed in your repository. It
-should be located in ``src/colab/``.
+Make sure you have a :file:`local_settings.py` file placed in your repository. It
+should be located in :file:`src/colab/`.
 
 To get started you can copy the example file as follow:
 
@@ -96,14 +96,13 @@ Now we are ready to run:
   fab runserver
   
 
-*Note*
+.. note::
 
-  As this is the first time you run this command it will install all 
-  requirements from ``requirements.txt`` into a virtualenv. To update 
-  those requirements you should run ``fab runserver:update``. 
+    As this is the first time you run this command it will install all 
+    requirements from :file:`requirements.txt` into a virtualenv. To update 
+    those requirements you should run :command:`fab runserver:update`.
 
 
-The ``fab runserver`` command will open the django builtin development
+The :command:`fab runserver` command will open the django builtin development
 server on the port 7000 but due to vagrant magic you will be able to 
 access it on ``http://localhost:8000/``.
-
