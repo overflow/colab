@@ -6,7 +6,7 @@ from django import forms
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 from haystack.forms import SearchForm
-from haystack.inputs import AltParser
+from haystack.inputs import Raw
 
 from accounts.models import User
 from super_archives.models import Message, MailingList
@@ -106,7 +106,7 @@ class ColabSearchForm(SearchForm):
                 'bf': 'recip(ms(NOW/HOUR,modified),3.16e-11,1,1)^10',
             }
 
-            sqs = sqs.filter(content=AltParser('edismax', q, **dismax_opts))
+            sqs = sqs.filter(content=q)
 
         if self.cleaned_data['type']:
             sqs = sqs.filter(type=self.cleaned_data['type'])
