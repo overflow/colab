@@ -30,7 +30,7 @@ def index(request):
         'latest_threads': latest_threads,
         'type_count': count_types,
         'latest_results': SearchQuerySet().all().order_by(
-            '-modified', '-created'
+            '-modified', 
         )[:6],
     }
     return render(request, 'home.html', context)
