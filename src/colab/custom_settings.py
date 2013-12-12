@@ -123,6 +123,7 @@ INSTALLED_APPS = INSTALLED_APPS + (
     'feedzilla',
     'taggit',
     'common',
+    'whoosh',
 )
 
 LOGGING = {
