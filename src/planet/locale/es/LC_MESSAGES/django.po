@@ -96,8 +96,8 @@ msgstr "Solicite la inclusión de un blog"
 #: templates/feedzilla/tag.html:5
 #, python-format
 msgid "Posts with &laquo;%(tag)s&raquo; label"
-msgstr "Envíos con etiqueta &laquo;%(tag)s&raquo;"
+msgstr "Mensajes con etiqueta &laquo;%(tag)s&raquo;"
 
 #: templates/feedzilla/tag.html:14
 msgid "No posts with such label"
-msgstr "No hay envíos con dicha etiqueta"
+msgstr "No hay mensajes con dicha etiqueta"
