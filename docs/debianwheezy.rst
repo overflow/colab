@@ -14,7 +14,7 @@ Install dependencies
 
 * Install Git and VirtualBox: ::
 
-    aptitude install git-core virtualbox
+    aptitude install git-core virtualbox libevent-dev
     
 * Download Vagrant 3.3 and install it: ::
 
