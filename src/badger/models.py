@@ -80,5 +80,7 @@ class Badge(models.Model):
 
 class BadgeI18N(I18nModel):
     class Meta:
+        verbose_name = _(u'Badge I18N')
+        verbose_name_plural = _(u'Badges I18N')
         source_model = Badge
         translation_fields = ('title', 'description')

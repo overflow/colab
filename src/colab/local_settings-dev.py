@@ -30,7 +30,13 @@ DATABASES['default']['HOST'] = 'localhost'
 DATABASES['trac']['PASSWORD'] = 'colab'
 DATABASES['trac']['HOST'] = 'localhost'
 
+'''Select the search engine you want to use "Solr or Whoosh" '''
+#Configuration for Solr
 HAYSTACK_CONNECTIONS['default']['URL'] = 'http://localhost:8983/solr/'
+
+#Configuration for Whoosh
+HAYSTACK_CONNECTIONS['default']['PATH'] = 'whoosh/'
+HAYSTACK_CONNECTIONS['default']['ENGINE'] = 'haystack.backends.whoosh_backend.WhooshEngine'
 
 COLAB_TRAC_URL = 'http://localhost:5000/'
 COLAB_CI_URL = 'http://localhost:8080/ci/'

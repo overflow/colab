@@ -37,15 +37,25 @@ class EmailAddressValidation(models.Model):
     class Meta:
         unique_together = ('user', 'address')
 
-
 class EmailAddress(models.Model):
-    user = models.ForeignKey(User, null=True, related_name='emails',
-                             on_delete=models.SET_NULL)
-    address = models.EmailField(unique=True)
-    real_name = models.CharField(max_length=64, blank=True, db_index=True)
-    md5 = models.CharField(max_length=32, null=True)
+    user = models.ForeignKey(User, 
+                             null=True, related_name='emails',
+                             on_delete=models.SET_NULL,
+                             verbose_name=_(u"User"), 
+                             help_text=_(u"Select an User from list"))
+    address = models.EmailField(unique=True,
+                                verbose_name=_(u"Email Address"), 
+                                help_text=_(u"Enter a Email Address"))
+    real_name = models.CharField(max_length=64, blank=True, db_index=True,
+                                 verbose_name=_(u"Real name"), 
+                                 help_text=_(u"Enter an User's real name"))
+    md5 = models.CharField(max_length=32, null=True,
+                           verbose_name=_(u"MD5"), 
+                           help_text=_(u"Enter a MD5 Sum"))
 
     class Meta:
+        verbose_name = _(u"Email Address")
+        verbose_name_plural = _(u"Email Addresses")
         ordering = ('id', )
 
     def save(self, *args, **kwargs):
@@ -107,7 +117,8 @@ class Keyword(models.Model):
 
 class Thread(models.Model, HitCounterModelMixin):
 
-    subject_token = models.CharField(max_length=512)
+    subject_token = models.CharField(max_length=512,
+                                     verbose_name=_(u"Subject token"))
     mailinglist = models.ForeignKey(MailingList,
                                     verbose_name=_(u"Mailing List"),
                                     help_text=_(u"The Mailing List where is the thread"))
@@ -116,7 +127,8 @@ class Thread(models.Model, HitCounterModelMixin):
                                                      verbose_name=_(u"Latest message"),
                                                      help_text=_(u"Latest message posted"))
     score = models.IntegerField(default=0, verbose_name=_(u"Score"), help_text=_(u"Thread score"))
-    spam = models.BooleanField(default=False)
+    spam = models.BooleanField(default=False,
+                               verbose_name=_(u"is SPAM?"))
 
     highest_score = HighestScore()
     all_objects = models.Manager()
@@ -233,21 +245,28 @@ class Vote(models.Model):
 
 class Message(models.Model):
 
-    from_address = models.ForeignKey(EmailAddress, db_index=True)
-    thread = models.ForeignKey(Thread, null=True, db_index=True)
+    from_address = models.ForeignKey(EmailAddress, db_index=True,
+                                     verbose_name=_(u"From address"))
+    thread = models.ForeignKey(Thread, null=True, db_index=True,
+                                     verbose_name=_(u"Thread"))
     # RFC 2822 recommends to use 78 chars + CRLF (so 80 chars) for
     #   the max_length of a subject but most of implementations
     #   goes for 256. We use 512 just in case.
     subject = models.CharField(max_length=512, db_index=True,
                                verbose_name=_(u"Subject"),
                                help_text=_(u"Please enter a message subject"))
-    subject_clean = models.CharField(max_length=512, db_index=True)
+    subject_clean = models.CharField(max_length=512, db_index=True,
+                                     verbose_name=_(u"Subject clean"))
     body = models.TextField(default='',
                             verbose_name=_(u"Message body"),
                             help_text=_(u"Please enter a message body"))
-    received_time = models.DateTimeField(db_index=True)
-    message_id = models.CharField(max_length=512)
-    spam = models.BooleanField(default=False)
+    received_time = models.DateTimeField(db_index=True,
+                            verbose_name=_(u"Received time"),
+                            help_text=_(u"Please enter a Received time"))
+    message_id = models.CharField(max_length=512,
+                            verbose_name=_(u"Message id"))
+    spam = models.BooleanField(default=False,
+                            verbose_name=_(u"is SPAM?"))
 
     all_objects = models.Manager()
     objects = NotSpamManager()

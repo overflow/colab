@@ -14,7 +14,7 @@ Install dependencies
 
 * Install Git and VirtualBox: ::
 
-    aptitude install git-core virtualbox
+    aptitude install git-core virtualbox libevent-dev
     
 * Download Vagrant 3.3 and install it: ::
 
@@ -33,7 +33,7 @@ Getting started with the Virtual Machine
 
 First you will need to clone the repository:
 
-.. code-block::
+::
 
   git clone git@github.com:interlegis/colab.git
 
@@ -47,7 +47,7 @@ First you will need to clone the repository:
 Enter in the repository you've just cloned.
 To start working all you need is to turn the virtual machine on with the command:
 
-.. code-block::
+::
 
   vagrant up
 
@@ -85,14 +85,14 @@ should be located in :file:`src/colab/`.
 
 To get started you can copy the example file as follow:
 
-.. code-block::
+::
 
   cp src/colab/local_settings-dev.py src/colab/local_settings.py 
 
 
 Now we are ready to run:
 
-.. code-block::
+::
 
   fab runserver
   

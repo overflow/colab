@@ -123,6 +123,8 @@ INSTALLED_APPS = INSTALLED_APPS + (
     'feedzilla',
     'taggit',
     'common',
+
+    # Search functionality
     'whoosh',
 )
 
