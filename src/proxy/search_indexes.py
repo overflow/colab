@@ -9,7 +9,7 @@ from haystack import indexes
 from haystack.utils import log as logging
 
 from search.base_indexes import BaseIndex
-from .models import Attachment, Ticket, Wiki, Revision
+from .models import Attachment, Ticket, Wiki, Revision,MediaWiki
 
 
 logger = logging.getLogger('haystack')
@@ -96,6 +96,26 @@ class WikiIndex(BaseIndex, indexes.Indexable):
     def prepare_type(self, obj):
         return u'wiki'
 
+
+class MediaWikiIndex(BaseIndex, indexes.Indexable):
+    title = indexes.CharField(model_attr='name')
+    collaborators = indexes.CharField(
+        model_attr='collaborators',
+        null=True,
+        stored=False,
+    )
+
+    def get_model(self):
+        return MediaWiki
+
+    def prepare_description(self, obj):
+        return u'{}\n{}'.format(obj.wiki_text, obj.collaborators)
+
+    def prepare_icon_name(self, obj):
+        return u'book'
+
+    def prepare_type(self, obj):
+        return u'wiki'
 
 class TicketIndex(BaseIndex, indexes.Indexable):
     tag = indexes.CharField(model_attr='status', null=True)

@@ -84,6 +84,13 @@ DATABASES = {
         'USER': 'colab',
         'PASSWORD': os.environ.get('COLAB_TRAC_DB_PWD'),
         'HOST': os.environ.get('COLAB_TRAC_DB_HOST'),
+    },
+    'mediawiki': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mediawiki',
+        'USER': 'colab',
+        'PASSWORD': os.environ.get('COLAB_MEDIAWIKI_DB_PWD'),
+        'HOST': os.environ.get('COLAB_MEDIAWIKI_DB_HOST'),
     }
 }
 
@@ -94,7 +101,7 @@ CACHES = {
     }
 }
 
-DATABASE_ROUTERS = ['colab.routers.TracRouter',]
+DATABASE_ROUTERS = ['colab.routers.WikiRouter','colab.routers.TracRouter',]
 
 INSTALLED_APPS = INSTALLED_APPS + (
 

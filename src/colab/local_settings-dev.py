@@ -29,6 +29,8 @@ DATABASES['default']['PASSWORD'] = 'colab'
 DATABASES['default']['HOST'] = 'localhost'
 DATABASES['trac']['PASSWORD'] = 'colab'
 DATABASES['trac']['HOST'] = 'localhost'
+DATABASES['mediawiki']['PASSWORD'] = 'colab'
+DATABASES['mediawiki']['HOST'] = 'localhost'
 
 '''Select the search engine you want to use "Solr or Whoosh" '''
 #Configuration for Solr
